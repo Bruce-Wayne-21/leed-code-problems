@@ -1,16 +1,4 @@
-﻿// OOP Concepts Demo
-
-var dog = new Dog("Buddy", 3);
-var cat = new Cat("Whiskers", 5);
-
-Animal[] animals = [dog, cat];
-
-foreach (var animal in animals)
-{
-    Console.WriteLine(animal);
-    animal.Speak();
-    Console.WriteLine();
-}
+﻿namespace Oop;
 
 // Abstraction & Encapsulation
 public abstract class Animal(string name, int age)
@@ -32,4 +20,22 @@ public class Dog(string name, int age) : Animal(name, age)
 public class Cat(string name, int age) : Animal(name, age)
 {
     public override void Speak() => Console.WriteLine($"{Name} says: Meow!");
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var dog = new Dog("Buddy", 3);
+        var cat = new Cat("Whiskers", 5);
+
+        Animal[] animals = [dog, cat];
+
+        foreach (var animal in animals)
+        {
+            Console.WriteLine(animal);
+            animal.Speak();
+            Console.WriteLine();
+        }
+    }
 }
