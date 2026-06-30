@@ -1,6 +1,7 @@
 ﻿using oop.Models;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace Oop;
 
@@ -14,11 +15,18 @@ public class Program
 
         //Task.WhenAll(PrintOne(), PrintOneAsync());
 
-        var solution = new Solution();
-        int[] num = new int[] { -1, 0, 1, 2, -1, -4 };
-        var response = solution.ThreeSum(num);
-        Console.WriteLine(response);
+        //var solution = new Solution();
+        //int[] num = new int[] { -1, 0, 1, 2, -1, -4 };
+        //var response = solution.ThreeSum(num);
+        //Console.WriteLine(response);
 
+
+        var solution_1 = new Solution_1();
+
+        bool value = solution_1.IsPalindrome("A man, a plan, a canal: Panama");
+        Console.WriteLine(value);
+
+        Console.ReadLine();
 
     }
 
@@ -89,8 +97,46 @@ public class Program
         }
     }
 
+    public class Solution_1
+    {
+        public bool IsPalindrome(string s)
+        {
+            if(string.IsNullOrEmpty(s)) return true;
+            string value = RemoveNonAlphanumericChars(s.ToLower().Trim());
+            string[] array = value.Select(c => c.ToString()).ToArray();
+            for(int i = 0; i < array.Length; i++)
+            {
+                int x = (array.Length - i ) - 1;
+                int y = i;
+                if (array[x] != array[y])
+                {
+                   return false;
+                }
+
+            }
+            return true;
+
+        }
+
+
+        Regex regex = new Regex("[^a-zA-Z0-9]", RegexOptions.Compiled);
+
+        public  string RemoveNonAlphanumericChars(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return s;
+
+            return regex.Replace(s, "");
+
+        }
+
+    }
+
+
 
 }
+    
+
 
 
 
