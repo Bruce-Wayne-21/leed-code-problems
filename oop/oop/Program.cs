@@ -144,51 +144,19 @@ public class Program
                 string[] letters = Enumerable.Range('A', 26)
                              .Select(c => ((char)c).ToString())
                              .ToArray();
-               if(columnNumber <= letters.Length)
-               {
+                if (columnNumber <= letters.Length)
+                {
                     return letters[columnNumber];
-               }
-               else
-               {
-                   var value_2 = letters[25];
-                   int times = columnNumber / letters.Length; 
-                   var index = columnNumber % letters.Length;
-                
-                   string second_value = letters[index];
-                   return value_2 + second_value;
-               }
+                }
+                else
+                {
+                    var value_2 = letters[25];
+                    int times = columnNumber / letters.Length;
+                    var index = columnNumber % letters.Length;
 
-                return letters[columnNumber];
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-    public class solution_2
-    {
-        public string ConvertToTitle(int columnNumber)
-        {
-            try
-            {
-                string[] letters = Enumerable.Range('A', 26)
-                             .Select(c => ((char)c).ToString())
-                             .ToArray();
-               if(columnNumber <= letters.Length)
-               {
-                    return letters[columnNumber];
-               }
-               else
-               {
-                   var value_2 = letters[25];
-                   int times = columnNumber / letters.Length; 
-                   var index = columnNumber % letters.Length;
-                
-                   string second_value = letters[index];
-                   return value_2 + second_value;
-               }
+                    string second_value = letters[index];
+                    return value_2 + second_value;
+                }
 
                 return letters[columnNumber];
 
@@ -199,6 +167,8 @@ public class Program
             }
         }
     }
+
+    
 
 
 
