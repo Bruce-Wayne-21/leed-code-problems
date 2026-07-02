@@ -21,9 +21,12 @@ public class Program
         //Console.WriteLine(response);
 
 
-        var solution_1 = new Solution_1();
+        //var solution_1 = new Solution_1();
 
-        bool value = solution_1.IsPalindrome("A man, a plan, a canal: Panama");
+        //bool value = solution_1.IsPalindrome("A man, a plan, a canal: Panama");
+
+        var solution_2 = new solution_2();
+        string value = solution_2.ConvertToTitle(28);
         Console.WriteLine(value);
 
         Console.ReadLine();
@@ -132,10 +135,44 @@ public class Program
 
     }
 
+    public class solution_2
+    {
+        public string ConvertToTitle(int columnNumber)
+        {
+            try
+            {
+                string[] letters = Enumerable.Range('A', 26)
+                             .Select(c => ((char)c).ToString())
+                             .ToArray();
+               if(columnNumber <= letters.Length)
+               {
+                    return letters[columnNumber];
+               }
+               else
+               {
+                   var value_2 = letters[25];
+                   int times = columnNumber / letters.Length; 
+                   var index = columnNumber % letters.Length;
+                
+                   string second_value = letters[index];
+                   return value_2 + second_value;
+               }
+
+                return letters[columnNumber];
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+    }
+
 
 
 }
-    
+
+
 
 
 
