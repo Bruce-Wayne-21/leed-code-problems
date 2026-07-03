@@ -26,7 +26,7 @@ public class Program
         //bool value = solution_1.IsPalindrome("A man, a plan, a canal: Panama");
 
         var solution_2 = new solution_2();
-        string value = solution_2.ConvertToTitle(28);
+        string value = solution_2.ConvertToTitle(2147483647);
         Console.WriteLine(value);
 
         Console.ReadLine();
@@ -141,20 +141,40 @@ public class Program
         {
             try
             {
-                string[] letters = Enumerable.Range('A', 26)
-                             .Select(c => ((char)c).ToString())
-                             .ToArray();
-                if (columnNumber <= letters.Length)
+                var letters = Enumerable.Range(1, 26)
+    .ToDictionary(i => i, i => ((char)('A' + i - 1)).ToString());
+                if (columnNumber <= letters.Count)
                 {
                     return letters[columnNumber];
                 }
                 else
                 {
-                    var value_2 = letters[25];
-                    int times = columnNumber / letters.Length;
-                    var index = columnNumber % letters.Length;
+                    int times = (columnNumber / letters.Count);
+                    int digicount = times.ToString().Length;
+                    if(digicount > 4)
+                    {
+                        int count = 0;
+                        for(int i = 0; i <= columnNumber; i++)
+                        {
+                            if(i == 26 )
+                            {
+                                count++;
+                                i = 0;
+                                continue;
+                            }
 
-                    string second_value = letters[index];
+                            if(count > columnNumber)
+                            {
+                                break;
+                            }
+                                
+                        }
+                    }
+                    var value_2 = letters[times];
+                    
+                    int remainder = columnNumber % letters.Count;
+                    //var index =   letters.Length % columnNumber;
+                    string second_value = letters[remainder];
                     return value_2 + second_value;
                 }
 
