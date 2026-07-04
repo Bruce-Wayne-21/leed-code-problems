@@ -10,13 +10,3 @@ This repository serves as a personal tracker for continuous learning, interview 
 
 The repository is organized by **Topic/Data Structure** to make it easy to navigate and review specific concepts.
 
-```text
-📦 leetcode-practice
- ┣ 📂 Arrays
- ┃ ┣ 📜 TwoSum.java
- ┃ ┗ 📜 BestTimeToBuyAndSellStock.py
- ┣ 📂 LinkedLists
- ┃ ┗ 📜 ReverseLinkedList.cpp
- ┣ 📂 DynamicProgramming
- ┃ ┗ 📜 ClimbingStairs.java
- ┗ 📜 README.md
