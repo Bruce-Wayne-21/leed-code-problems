@@ -128,7 +128,7 @@ namespace oop
                     try
                     {
                         var letters = Enumerable.Range(1, 26)
-            .ToDictionary(i => i, i => ((char)('A' + i - 1)).ToString());
+                                .ToDictionary(i => i, i => ((char)('A' + i - 1)).ToString());
                         if (columnNumber <= letters.Count)
                         {
                             return letters[columnNumber];
@@ -142,6 +142,10 @@ namespace oop
                                 int count = 0;
                                 for (int i = 0; i <= columnNumber; i++)
                                 {
+                                    if(i == times)
+                                    {
+
+                                    }
                                     if (i == 26)
                                     {
                                         count++;
@@ -156,12 +160,12 @@ namespace oop
 
                                 }
                             }
-                            var value_2 = letters[times];
+                            //var value_2 = letters[times];
 
                             int remainder = columnNumber % letters.Count;
                             //var index =   letters.Length % columnNumber;
                             string second_value = letters[remainder];
-                            return value_2 + second_value;
+                            return  second_value;
                         }
 
                         return letters[columnNumber];
