@@ -22,6 +22,9 @@ public class Program
         booking.CustomerName = "John Doe";
         booking.PrintDetails();
 
+        leedcode.problms problms = new leedcode.problms();
+        await problms.PrintOneAsync();
+
         //Console.WriteLine(value);
 
         Console.ReadLine();
