@@ -29,6 +29,10 @@ public class Program
         //var value = solution_2.ConvertToTitle(82595524
         //
 
+        leedcode.problms.Solution_3 solution_3 = new leedcode.problms.Solution_3();
+        string value = solution_3.ConvertToTitle(82595524);
+        Console.WriteLine(value);
+
         //DSA.Datastructure.printnum();
         //DSA.Datastructure.PrintNumber();
 

@@ -160,6 +160,15 @@ namespace oop
 
                                 }
                             }
+
+                            for (int i = 0; i <= columnNumber; i++)
+                            {
+                                do
+                                {
+                                     
+                                }
+                                while (i == columnNumber);
+                            }
                             //var value_2 = letters[times];
 
                             int remainder = columnNumber % letters.Count;
@@ -175,6 +184,17 @@ namespace oop
                     {
                         throw new Exception(ex.Message);
                     }
+                }
+            }
+
+            public class Solution_3
+            {
+                public string ConvertToTitle(int columnNumber)
+                {
+                    if (columnNumber == 0) return "";
+                    columnNumber--;
+                    char c = (char)('A' + columnNumber % 26);
+                    return ConvertToTitle(columnNumber / 26) + c;
                 }
             }
 
