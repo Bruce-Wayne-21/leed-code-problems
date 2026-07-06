@@ -198,6 +198,24 @@ namespace oop
                 }
             }
 
+            public class solution_4
+            {
+                public int MajorityElement(int[] nums)
+                {
+
+                    var groups = nums.GroupBy(n => n).Select(g => new { number = g.Key, count = g.Count() });
+                    int half = nums.Length / 2;
+
+                    var index = groups.Where(n => n.count > half).ToList();
+                    int number_1 = index[0].number;
+                    return number_1;
+                    //var number = index.Max(n => n.count && n.number).tolist();
+                   
+                }
+
+            }
+            
+
 
         }
     }
