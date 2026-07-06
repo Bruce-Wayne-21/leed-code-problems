@@ -200,7 +200,7 @@ namespace oop
 
             public class solution_4
             {
-                public int MajorityElement(int[] nums)
+                public int MajorityElement_1(int[] nums)
                 {
 
                     var groups = nums.GroupBy(n => n).Select(g => new { number = g.Key, count = g.Count() });
@@ -213,7 +213,33 @@ namespace oop
                    
                 }
 
+                public int MajorityElement(int[] nums)
+                {
+                    int count = 0;
+                    int candiate = nums[0];
+                    for(int i =0; i < nums.Length; i++)
+                    {
+                        if(count == 0)
+                        {
+                            candiate = nums[i];
+                            count++;
+                            continue;
+                        }
+                        if(candiate != nums[i])
+                        {
+                            count--;
+                        }
+                        else
+                        {
+                            count++;
+                        }
+                    }
+                    return candiate;
+                }
+
             }
+
+
             
 
 
