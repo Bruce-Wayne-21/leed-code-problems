@@ -39,13 +39,16 @@ public class Program
         //DSA.Datastructure.dowhile();
 
 
-        leedcode.problms.solution_4 solution_4 = new leedcode.problms.solution_4();
-        int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
-        int val = solution_4.MajorityElement(array);
+        leedcode.problms.solution_4.Solution solution_4 = new leedcode.problms.solution_4.Solution();
+        //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
+        //int val = solution_4.MajorityElement(array);
+
+        int result = solution_4.MyAtoi("  -042");
 
 
 
-        //Console.WriteLine(value);
+
+        Console.WriteLine(result);
 
         //Console.WriteLine(value);
 

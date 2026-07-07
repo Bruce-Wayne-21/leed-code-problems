@@ -237,6 +237,39 @@ namespace oop
                     return candiate;
                 }
 
+                public class Solution
+                {
+                    public int MyAtoi(string str)
+                    {
+                        string value = str.Replace(" ", "");
+                        string st_value = "";
+                        string words = "";
+                        bool nagativ = false;
+                        List<string> st = value.ToString().Select(c => c.ToString()).ToList();
+                        for (int i = 0; i < st.Count; i++)
+                        {
+                            if (!int.TryParse(st[i], out int str_val))
+                            {
+                                words = words + st[i];
+                                nagativ = st[i] == "-" ? true : false;
+                            }
+                            else
+                            {
+                                st_value = st_value + st[i];
+                            }
+                        }
+
+                        int result = int.Parse(st_value);
+                        if (nagativ)
+                        {
+                            result = -result;
+                        }
+                        return result;
+                    }
+                }
+
+                
+
             }
 
 
