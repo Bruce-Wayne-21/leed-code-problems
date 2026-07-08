@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -245,6 +246,7 @@ namespace oop
                         string st_value = "";
                         string words = "";
                         bool nagativ = false;
+                        int gottheword = 1;
                         List<string> st = value.ToString().Select(c => c.ToString()).ToList();
                         for (int i = 0; i < st.Count; i++)
                         {
@@ -252,19 +254,62 @@ namespace oop
                             {
                                 words = words + st[i];
                                 nagativ = st[i] == "-" ? true : false;
+                                if (i == 0 && !nagativ)
+                                {
+                                    break;
+                                }
+                                
+                                if(gottheword > i && !nagativ && i !=0 )
+                                {
+                                    break;
+                                }
                             }
                             else
                             {
+                                if (st[i] == "0" && i == 0)
+                                {
+                                    break;
+                                }
+                                gottheword++;
                                 st_value = st_value + st[i];
                             }
                         }
 
-                        int result = int.Parse(st_value);
+                        _ = int.TryParse(st_value , out int result);
+                        
                         if (nagativ)
                         {
                             result = -result;
                         }
                         return result;
+                    }
+
+                    public class Solution_23
+                    {
+                        public int MyAtoi(string str)
+                        {
+                            int i = 0, n = str.Length;
+
+                            while (i < n && str[i] == ' ') i++;
+
+                            int sign = 1;
+                            if (i < n && (str[i] == '+' || str[i] == '-'))
+                            {
+                                sign = str[i] == '-' ? -1 : 1;
+                                i++;
+                            }
+
+                            long result = 0; 
+                            while (i < n && char.IsDigit(str[i]))
+                            {
+                                result = result * 10 + (str[i] - '0');
+                                if (sign == 1 && result > int.MaxValue) return int.MaxValue;
+                                if (sign == -1 && -result < int.MinValue) return int.MinValue;
+                                i++;
+                            }
+
+                            return (int)(sign * result);
+                        }
                     }
                 }
 

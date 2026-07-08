@@ -43,7 +43,7 @@ public class Program
         //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
         //int val = solution_4.MajorityElement(array);
 
-        int result = solution_4.MyAtoi("  -042");
+        int result = solution_4.MyAtoi("words and 987");
 
 
 
