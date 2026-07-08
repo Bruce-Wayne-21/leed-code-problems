@@ -198,6 +198,83 @@ namespace oop
                 }
             }
 
+            public class solution_4
+            {
+                public int MajorityElement_1(int[] nums)
+                {
+
+                    var groups = nums.GroupBy(n => n).Select(g => new { number = g.Key, count = g.Count() });
+                    int half = nums.Length / 2;
+
+                    var index = groups.Where(n => n.count > half).ToList();
+                    int number_1 = index[0].number;
+                    return number_1;
+                    //var number = index.Max(n => n.count && n.number).tolist();
+                   
+                }
+
+                public int MajorityElement(int[] nums)
+                {
+                    int count = 0;
+                    int candiate = nums[0];
+                    for(int i =0; i < nums.Length; i++)
+                    {
+                        if(count == 0)
+                        {
+                            candiate = nums[i];
+                            count++;
+                            continue;
+                        }
+                        if(candiate != nums[i])
+                        {
+                            count--;
+                        }
+                        else
+                        {
+                            count++;
+                        }
+                    }
+                    return candiate;
+                }
+
+                public class Solution
+                {
+                    public int MyAtoi(string str)
+                    {
+                        string value = str.Replace(" ", "");
+                        string st_value = "";
+                        string words = "";
+                        bool nagativ = false;
+                        List<string> st = value.ToString().Select(c => c.ToString()).ToList();
+                        for (int i = 0; i < st.Count; i++)
+                        {
+                            if (!int.TryParse(st[i], out int str_val))
+                            {
+                                words = words + st[i];
+                                nagativ = st[i] == "-" ? true : false;
+                            }
+                            else
+                            {
+                                st_value = st_value + st[i];
+                            }
+                        }
+
+                        int result = int.Parse(st_value);
+                        if (nagativ)
+                        {
+                            result = -result;
+                        }
+                        return result;
+                    }
+                }
+
+                
+
+            }
+
+
+            
+
 
         }
     }

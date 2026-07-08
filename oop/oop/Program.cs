@@ -29,19 +29,26 @@ public class Program
         //var value = solution_2.ConvertToTitle(82595524
         //
 
-        leedcode.problms.Solution_3 solution_3 = new leedcode.problms.Solution_3();
-        string value = solution_3.ConvertToTitle(82595524);
-        Console.WriteLine(value);
-
-        //DSA.Datastructure.printnum();
-        //DSA.Datastructure.PrintNumber();
-
-        DSA.Datastructure.dowhile();
-
-
-
-
+        //leedcode.problms.Solution_3 solution_3 = new leedcode.problms.Solution_3();
+        //string value = solution_3.ConvertToTitle(82595524);
         //Console.WriteLine(value);
+
+        ////DSA.Datastructure.printnum();
+        ////DSA.Datastructure.PrintNumber();
+
+        //DSA.Datastructure.dowhile();
+
+
+        leedcode.problms.solution_4.Solution solution_4 = new leedcode.problms.solution_4.Solution();
+        //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
+        //int val = solution_4.MajorityElement(array);
+
+        int result = solution_4.MyAtoi("  -042");
+
+
+
+
+        Console.WriteLine(result);
 
         //Console.WriteLine(value);
 
