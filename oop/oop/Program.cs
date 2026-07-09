@@ -1,5 +1,4 @@
 ﻿using oop;
-using oop.Models;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -39,11 +38,11 @@ public class Program
         //DSA.Datastructure.dowhile();
 
 
-        leedcode.problms.solution_4.Solution solution_4 = new leedcode.problms.solution_4.Solution();
+        leedcode.problms.solution_4.solition solution_4 = new leedcode.problms.solution_4.solition();
         //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
         //int val = solution_4.MajorityElement(array);
 
-        int result = solution_4.MyAtoi("words and 987");
+        bool result = solution_4.IsIsomorphic("add","egg");
 
 
 
