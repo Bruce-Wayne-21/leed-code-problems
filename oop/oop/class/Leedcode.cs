@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics.Metrics;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -310,6 +311,44 @@ namespace oop
 
                             return (int)(sign * result);
                         }
+                    }
+                }
+
+
+                public class solition
+                {
+                    public bool IsIsomorphic(string s , string t)
+                    {
+                        try
+                        {
+                            if(s.Length !=  t.Length) return false;
+                            List<string > s_list = new List<string>();
+                            s_list = s.ToString().Select(e=>e.ToString()).ToList();
+                            var t_list = s.ToString().Select(e =>  e.ToString()).ToList();
+
+                            for (int i = 0, j = 0; i < s_list.Count && j < t_list.Count; i++, j++)
+                            {
+                                List<string> s_list2 = new List<string>();
+                                List<string> t_list2 = new List<string>();
+
+                                s_list2.Add(s_list[i]);
+                                s_list.RemoveAt(i);
+                                t_list2.Add(t_list[i]);
+                                t_list.RemoveAt(i);
+                                s_list[i] = t_list2[i];
+                                t_list[i] = s_list2[i]; 
+
+                            }
+
+                            return true;
+
+
+                        }
+                        catch(Exception e)
+                        {
+                            return false;
+                        }
+
                     }
                 }
 
