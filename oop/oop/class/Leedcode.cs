@@ -324,7 +324,7 @@ namespace oop
                             if(s.Length !=  t.Length) return false;
                             List<string > s_list = new List<string>();
                             s_list = s.ToString().Select(e=>e.ToString()).ToList();
-                            var t_list = s.ToString().Select(e =>  e.ToString()).ToList();
+                            var t_list = t.ToString().Select(e =>  e.ToString()).ToList();
 
                             for (int i = 0, j = 0; i < s_list.Count && j < t_list.Count; i++, j++)
                             {
@@ -333,8 +333,10 @@ namespace oop
 
                                 s_list2.Add(s_list[i]);
                                 s_list.RemoveAt(i);
+                                s_list.Insert(i, "0");
                                 t_list2.Add(t_list[i]);
                                 t_list.RemoveAt(i);
+                                t_list.Insert(i, "0");
                                 s_list[i] = t_list2[i];
                                 t_list[i] = s_list2[i]; 
 
