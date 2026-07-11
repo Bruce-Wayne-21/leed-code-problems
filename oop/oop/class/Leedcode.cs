@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -317,7 +319,7 @@ namespace oop
 
                 public class solition
                 {
-                    public bool IsIsomorphic(string s , string t)
+                    public bool IsIsomorphic_1(string s , string t)
                     {
                         try
                         {
@@ -351,6 +353,43 @@ namespace oop
                             return false;
                         }
 
+                    }
+
+                    public class Solution
+                    {
+                        public bool IsIsomorphic(string s, string t)
+                        {
+                            if (s.Length != t.Length) return false;
+
+                            Dictionary<char, char> mapST = new Dictionary<char, char>();
+                            Dictionary<char, char> mapTS = new Dictionary<char, char>();
+
+                            for (int i = 0; i < s.Length; i++)
+                            {
+                                char cs = s[i];
+                                char ct = t[i];
+
+                                if (mapST.ContainsKey(cs))
+                                {
+                                    if (mapST[cs] != ct) return false;
+                                }
+                                else
+                                {
+                                    mapST[cs] = ct;
+                                }
+
+                                if (mapTS.ContainsKey(ct))
+                                {
+                                    if (mapTS[ct] != cs) return false;
+                                }
+                                else
+                                {
+                                    mapTS[ct] = cs;
+                                }
+                            }
+
+                            return true;
+                        }
                     }
                 }
 
