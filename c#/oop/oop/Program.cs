@@ -42,7 +42,7 @@ public class Program
         //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
         //int val = solution_4.MajorityElement(array);
 
-        bool result = solution_4.IsIsomorphic("add","egg");
+        bool result = solution_4.IsIsomorphic_1("add","egg");
 
 
 
