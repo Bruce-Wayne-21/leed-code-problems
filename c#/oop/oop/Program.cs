@@ -38,16 +38,23 @@ public class Program
         //DSA.Datastructure.dowhile();
 
 
-        leedcode.problms.solution_4.solition solution_4 = new leedcode.problms.solution_4.solition();
-        //int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
-        //int val = solution_4.MajorityElement(array);
+        //leedcode.problms.solution_4.solition solution_4 = new leedcode.problms.solution_4.solition();
+        ////int[] array = new int[] { 2, 2, 1, 1, 1, 2, 2 };
+        ////int val = solution_4.MajorityElement(array);
 
-        bool result = solution_4.IsIsomorphic_1("add","egg");
-
-
+        //bool result = solution_4.IsIsomorphic_1("add","egg");
 
 
-        Console.WriteLine(result);
+        oop.LinkedList_problem .linkedlist linkedList_Problem = new oop.LinkedList_problem.linkedlist();
+        linkedList_Problem.Append(4);
+        linkedList_Problem .Append(5);
+        linkedList_Problem.Append(19);
+        linkedList_Problem.Append('\n');
+
+        linkedList_Problem.Display ();
+
+
+        //Console.WriteLine(result);
 
         //Console.WriteLine(value);
 
