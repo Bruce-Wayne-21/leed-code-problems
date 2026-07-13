@@ -45,13 +45,19 @@ public class Program
         //bool result = solution_4.IsIsomorphic_1("add","egg");
 
 
-        oop.LinkedList_problem .linkedlist linkedList_Problem = new oop.LinkedList_problem.linkedlist();
-        linkedList_Problem.Append(4);
-        linkedList_Problem .Append(5);
-        linkedList_Problem.Append(19);
-        linkedList_Problem.Append('\n');
+        //oop.LinkedList_problem .linkedlist linkedList_Problem = new oop.LinkedList_problem.linkedlist();
+        //linkedList_Problem.Append(4);
+        //linkedList_Problem .Append(5);
+        //linkedList_Problem.Append(19);
+        //linkedList_Problem.Append('\n');
 
-        linkedList_Problem.Display ();
+        //linkedList_Problem.Display ();
+
+        oop.Array_problem.Problem.Solution solution = new oop.Array_problem.Problem.Solution();
+        int[] array = new int[] { 2, 2, 1 };
+        int val = solution.SingleNumber(array);
+        Console.WriteLine(val);
+        
 
 
         //Console.WriteLine(result);
