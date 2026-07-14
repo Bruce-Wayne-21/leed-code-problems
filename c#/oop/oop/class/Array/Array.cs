@@ -37,28 +37,27 @@ namespace oop
 
                         int val = list_2.FirstOrDefault();
                         return val;
-                        //Dictionary<int, (int, int)> keyValuePairs = new Dictionary<int, (int, int)>();
-                        //foreach (int i in nums)
-                        //{
-                        //    List<int> keys = new();
+                        Dictionary<int, (int, int)> keyValuePairs = new Dictionary<int, (int, int)>();
+                        foreach (int i in nums)
+                        {
+                            List<int> keys = new();
+                         if (nums.Contains(i))
+                            {
+                               int key = keyValuePairs.FirstOrDefault(x => x.Value == i).Key;
+                               int val = key;
+                               key++;
+                               keyValuePairs.Add(val, ());
+                           }
 
-                        //    if (nums.Contains(i))
-                        //    {
-                        //        int key = keyValuePairs.FirstOrDefault(x => x.Value == i).Key;
-                        //        int val = key;
-                        //        key++;
-                        //        keyValuePairs.Add(val, ());
-                        //    }
-
-                        //    // keys accessible here
-
-
-                        //    return i;
-                        //    else
-                        //        keyValuePairs.Add(1, i);
+                            
 
 
-                    } 
+                            return i;
+                           else
+                               keyValuePairs.Add(1, i);
+
+
+                    }
                     catch (Exception e)
                     {
                         return 0;
