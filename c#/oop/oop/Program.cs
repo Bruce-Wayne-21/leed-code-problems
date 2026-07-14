@@ -52,7 +52,7 @@ public class Program
         //linkedList_Problem.Append('\n');
 
         //linkedList_Problem.Display ();
-
+        
         oop.Array_problem.Problem.Solution solution = new oop.Array_problem.Problem.Solution();
         int[] array = new int[] { 2, 2, 1 };
         int val = solution.SingleNumber(array);
