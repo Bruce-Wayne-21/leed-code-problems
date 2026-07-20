@@ -9,7 +9,7 @@ namespace oop
 
         public class Problem
         {
-            public class Solution
+            public class Solutions
             {
                 public int SingleNumber(int[] nums)
                 {

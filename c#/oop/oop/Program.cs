@@ -53,11 +53,14 @@ public class Program
 
         //linkedList_Problem.Display ();
         
-        oop.Array_problem.Problem.Solution solution = new oop.Array_problem.Problem.Solution();
-        int[] array = new int[] { 2, 2, 1 };
-        int val = solution.SingleNumber(array);
-        Console.WriteLine(val);
+        //oop.Array_problem.Problem.Solution solution = new oop.Array_problem.Problem.Solution();
+        //int[] array = new int[] { 2, 2, 1 };
+        //int val = solution.SingleNumber(array);
+        //Console.WriteLine(val);
         
+
+        oop.TwoPoint_problems.Solution solution = new oop.TwoPoint_problems.Solution();
+        bool result = solution.IsHappy(234);
 
 
         //Console.WriteLine(result);
