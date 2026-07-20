@@ -1,3 +1,6 @@
+from ftplib import print_line
+
+
 def is_isomorphic(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
@@ -21,4 +24,20 @@ def is_isomorphic(s: str, t: str) -> bool:
     return True
 
 result = is_isomorphic("egg", "add")
-print(result)  # True
+# print(result)  # True
+
+
+def Is_Palindrome(word):
+        left = 0
+        right = len(word) - 1
+        while left < right:
+            if word[left] != word[right]:
+                return False
+
+            left += 1
+            right -= 1
+
+        return True
+
+print_line(Is_Palindrome("racecar"))  # True
+print(Is_Palindrome("hello"))  # False
